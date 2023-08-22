@@ -1,3 +1,5 @@
+import { ToDoApp } from './components/ToDoApp';
+
 export default function App() {
-	return <h1 className="text-red-400">hello word</h1>;
+	return <ToDoApp />;
 }

@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.todo-content {
+  @apply flex w-[80%] p-3 my-auto mx-auto justify-center bg-slate-400 rounded-lg shadow-lg;
+}
