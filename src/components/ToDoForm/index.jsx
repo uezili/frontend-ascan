@@ -15,6 +15,9 @@ export const ToDoForm = () => {
 
 	return (
 		<section>
+			<div className="flex justify-center font-bold">
+				<h1>Adicionar nova tarefa</h1>
+			</div>
 			<form className="grid grid-cols-1 gap-x-8 gap-y-6">
 				<div>
 					<label>Nome:</label>
@@ -24,21 +27,25 @@ export const ToDoForm = () => {
 					<label>Descrição:</label>
 					<textarea style={{ width: '100%' }}></textarea>
 				</div>
-				<div>
-					<label>Data</label>
-					<input
-						type="date"
-						value={dueDate}
-						onChange={(e) => setDueDate(e.target.value)}
-					/>
+				<div className="grid grid-cols-2 gap-2">
+					<div>
+						<input
+							type="date"
+							value={dueDate}
+							onChange={(e) => setDueDate(e.target.value)}
+						/>
+					</div>
+					<div>
+						<Select
+							className="select"
+							defaultValue={selectedOption}
+							onChange={setSelectedOption}
+							options={options}
+							placeholder="Nivel de prioridade"
+						/>
+					</div>
 				</div>
-				<Select
-					defaultValue={selectedOption}
-					onChange={setSelectedOption}
-					options={options}
-					placeholder="Nivel de prioridade"
-				/>
-				<button type="submit">Adicionar nova tarefa</button>
+				<button type="submit">Add nova tarefa.</button>
 			</form>
 		</section>
 	);
