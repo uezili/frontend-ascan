@@ -3,7 +3,10 @@ import './styles.css';
 import { useState } from 'react';
 
 export const ToDoForm = () => {
-	const [selectedOption, setSelectedOption] = useState(null);
+	const [priority, setPriority] = useState(null);
+	const [name, setName] = useState('');
+	const [description, setDescription] = useState('');
+	const [dueDate, setDueDate] = useState('');
 
 	const options = [
 		{ value: 'baixo', label: 'Baixo' },
@@ -11,21 +14,48 @@ export const ToDoForm = () => {
 		{ value: 'alto', label: 'Alto' },
 	];
 
-	const [dueDate, setDueDate] = useState('');
+	const handleSubmit = () => {
+		const addNewTask = {
+			id: Date.now(),
+			name,
+			description,
+			dueDate,
+			priority,
+		};
+
+		console.log(addNewTask);
+	};
 
 	return (
 		<section>
 			<div className="flex justify-center font-bold">
 				<h1>Adicionar nova tarefa</h1>
 			</div>
-			<form className="grid grid-cols-1 gap-x-8 gap-y-6">
+			<form
+				className="grid grid-cols-1 gap-x-8 gap-y-6"
+				onSubmit={handleSubmit}
+			>
 				<div>
-					<label>Nome:</label>
-					<input className="form-name" type="text" />
+					<label>
+						Nome:
+						<input
+							className="form-name"
+							value={name}
+							onChange={(e) => setName(e.target.value)}
+							type="text"
+						/>
+					</label>
 				</div>
 				<div>
-					<label>Descrição:</label>
-					<textarea style={{ width: '100%' }}></textarea>
+					<label>
+						Descrição:
+						<textarea
+							className="description"
+							style={{ width: '100%' }}
+							value={description}
+							onChange={(e) => setDescription(e.target.value)}
+						></textarea>
+					</label>
 				</div>
 				<div className="grid grid-cols-2 gap-2">
 					<div>
@@ -38,8 +68,8 @@ export const ToDoForm = () => {
 					<div>
 						<Select
 							className="select"
-							defaultValue={selectedOption}
-							onChange={setSelectedOption}
+							defaultValue={priority}
+							onChange={setPriority}
 							options={options}
 							placeholder="Nivel de prioridade"
 						/>
