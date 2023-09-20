@@ -1,12 +1,15 @@
 import Select from 'react-select';
 import './styles.css';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addTodo } from '../../actions/toDoActions';
 
 export const ToDoForm = () => {
-	const [priority, setPriority] = useState(null);
-	const [name, setName] = useState('');
+	const [title, setTitle] = useState('');
 	const [description, setDescription] = useState('');
 	const [dueDate, setDueDate] = useState('');
+	const [priority, setPriority] = useState(null);
+	const dispatch = useDispatch();
 
 	const options = [
 		{ value: 'baixo', label: 'Baixo' },
@@ -14,16 +17,10 @@ export const ToDoForm = () => {
 		{ value: 'alto', label: 'Alto' },
 	];
 
-	const handleSubmit = () => {
-		const addNewTask = {
-			id: Date.now(),
-			name,
-			description,
-			dueDate,
-			priority,
-		};
-
-		console.log(addNewTask);
+	const handleSubmit = (e) => {
+		console.log(title, description, dueDate, priority);
+		dispatch(addTodo(title, description, dueDate, priority));
+		e.preventDefault();
 	};
 
 	return (
@@ -37,11 +34,10 @@ export const ToDoForm = () => {
 			>
 				<div>
 					<label>
-						Nome:
+						Titulo:
 						<input
-							className="form-name"
-							value={name}
-							onChange={(e) => setName(e.target.value)}
+							value={title}
+							onChange={(e) => setTitle(e.target.value)}
 							type="text"
 						/>
 					</label>
