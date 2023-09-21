@@ -1,6 +1,6 @@
 .todo-item {
-  @apply border p-2 mb-2;
-  @apply grid-cols-2 bg-red-400 rounded-lg p-3;
+  @apply bg-gray-500 p-2 mb-2;
+  @apply rounded-lg p-3 border border-solid border-gray-600;
 }
 
 svg {
