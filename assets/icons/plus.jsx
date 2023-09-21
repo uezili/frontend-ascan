@@ -1,6 +1,7 @@
-export const Plus = () => {
+export const Plus = (props) => {
 	return (
 		<svg
+			className={props.rotate}
 			fill="#fff"
 			version="1.1"
 			id="Capa_1"

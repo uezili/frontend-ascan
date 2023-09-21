@@ -30,7 +30,7 @@ export const ToDoForm = () => {
 	return (
 		<section>
 			<div className="flex justify-center font-bold">
-				<h1 className="text-2xl pt-12">Adicionar nova tarefa</h1>
+				<h1 className="text-2xl">Adicionar nova tarefa</h1>
 			</div>
 			<form
 				className="grid grid-cols-1 gap-x-8 gap-y-6"
