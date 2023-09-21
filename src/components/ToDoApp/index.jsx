@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
 import { Header } from '../Header';
-import { ToDoForm } from '../ToDoForm';
 import { ToDoList } from '../ToDoList';
 
 import './styles.css';
+import { Modal } from '../Modal';
 
 export const ToDoApp = () => {
 	const todos = useSelector((state) => state.todos);
@@ -11,8 +11,8 @@ export const ToDoApp = () => {
 	return (
 		<div>
 			<Header />
-			<div className="grid grid-cols-2 w-full">
-				<ToDoForm />
+			<Modal />
+			<div className="w-2/3 my-0 mx-auto">
 				<ToDoList todos={todos} />
 			</div>
 		</div>
