@@ -2,8 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+h1 {
+  @apply text-2xl pt-3;
+}
 form {
-  @apply mx-auto mt-16 max-w-xl sm:mt-20;
+  @apply mx-auto mt-8 max-w-xl sm:mt-20;
 }
 
 label {
@@ -23,10 +26,12 @@ input[type="date"]{
 }
 
 button[type="submit"]{
-  @apply block w-full rounded-md bg-indigo-700 px-3.5 py-2.5 text-center text-sm text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600;
+  @apply flex justify-center items-center w-full rounded-md bg-indigo-700 px-3.5 py-2.5 text-center text-sm text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600;
+}
+button[type="submit"] svg{
+  @apply ml-2 w-6 h-6;
 }
 
 .select{
   @apply block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6;
-
 }

@@ -3,6 +3,7 @@ import './styles.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addTodo } from '../../actions/toDoActions';
+import { Plus } from '../../../assets/icons/plus';
 
 export const ToDoForm = () => {
 	const [title, setTitle] = useState('');
@@ -18,15 +19,18 @@ export const ToDoForm = () => {
 	];
 
 	const handleSubmit = (e) => {
-		console.log(title, description, dueDate, priority);
-		dispatch(addTodo(title, description, dueDate, priority));
 		e.preventDefault();
+		dispatch(addTodo(title, description, dueDate, priority));
+		setTitle('');
+		setDescription('');
+		setDueDate('');
+		setPriority(null);
 	};
 
 	return (
 		<section>
 			<div className="flex justify-center font-bold">
-				<h1>Adicionar nova tarefa</h1>
+				<h1 className="text-2xl pt-12">Adicionar nova tarefa</h1>
 			</div>
 			<form
 				className="grid grid-cols-1 gap-x-8 gap-y-6"
@@ -71,7 +75,11 @@ export const ToDoForm = () => {
 						/>
 					</div>
 				</div>
-				<button type="submit">Add nova tarefa.</button>
+				<div>
+					<button type="submit">
+						Add nova tarefa <Plus />
+					</button>
+				</div>
 			</form>
 		</section>
 	);
