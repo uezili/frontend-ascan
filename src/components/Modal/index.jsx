@@ -18,7 +18,7 @@ export const Modal = () => {
 	};
 
 	return (
-		<div className="flex justify-center">
+		<div className="flex justify-center ">
 			<button className="open-modal" onClick={openModal}>
 				<Plus rotate={rotate} />
 			</button>
