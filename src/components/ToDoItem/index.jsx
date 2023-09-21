@@ -17,7 +17,7 @@ function levelIcon(level) {
 export const ToDoItem = ({ todo }) => {
 	return (
 		<div className="todo-item">
-			<h1>{todo.title}</h1>
+			<h1 className="pt-0">{todo.title}</h1>
 			<div>
 				<p>{todo.description}</p>
 				<span>{levelIcon(todo.priority.label)}</span>
