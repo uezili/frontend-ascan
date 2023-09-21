@@ -1,0 +1,23 @@
+.todo-item {
+  @apply border p-2 mb-2;
+  @apply grid-cols-2 bg-red-400 rounded-lg p-3;
+}
+
+svg {
+  @apply w-7 h-7;
+}
+.todo-item h2 {
+  @apply text-lg font-semibold;
+}
+
+.date-data{
+  @apply flex justify-end items-center gap-4;
+}
+
+span{
+  @apply flex justify-end;
+}
+/* 
+button{
+  @apply bg-red-500 text-white px-2 py-1 mt-2";
+} */
