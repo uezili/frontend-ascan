@@ -1,7 +1,7 @@
 export const SignalBarsMiddle = () => {
 	return (
 		<svg
-			fill="#F8DE22"
+			fill="#FD8D14"
 			id="Layer_1"
 			data-name="Layer 1"
 			viewBox="0 0 24 24"
