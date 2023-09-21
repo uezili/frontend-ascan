@@ -6,7 +6,7 @@ h1 {
   @apply text-2xl pt-3;
 }
 form {
-  @apply mx-auto mt-8 max-w-xl sm:mt-20;
+  @apply mx-auto max-w-xl;
 }
 
 label {
