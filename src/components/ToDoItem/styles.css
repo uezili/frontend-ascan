@@ -1,6 +1,6 @@
 .todo-item {
-  @apply bg-gray-500 p-2 mb-2;
-  @apply rounded-lg p-3 border border-solid border-gray-600;
+  @apply bg-gray-400 p-2 mb-2;
+  @apply rounded-lg p-3 border border-solid border-gray-400;
 }
 
 svg {
@@ -17,7 +17,16 @@ svg {
 span{
   @apply flex justify-end;
 }
-/* 
-button{
-  @apply bg-red-500 text-white px-2 py-1 mt-2";
-} */
+
+.select-date{
+  @apply block w-[30%] rounded-xl border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6;
+}
+
+.select-date > div{
+  @apply rounded-xl;
+}
+
+.select-date input{
+  grid-area: auto !important;
+  min-width: 0px !important;
+}

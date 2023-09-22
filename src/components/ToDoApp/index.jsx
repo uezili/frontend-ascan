@@ -12,7 +12,7 @@ export const ToDoApp = () => {
 		<div>
 			<Header />
 			<Modal />
-			<div className="w-2/3 my-0 mx-auto">
+			<div className="w-1/2 my-0 mx-auto">
 				<ToDoList todos={todos} />
 			</div>
 		</div>
