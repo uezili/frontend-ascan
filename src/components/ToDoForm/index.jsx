@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { addTodo } from '../../actions/toDoActions';
 import { Plus } from '../../../assets/icons/plus';
 
-export const ToDoForm = () => {
+export const ToDoForm = ({ onAfterSubmit }) => {
 	const [title, setTitle] = useState('');
 	const [description, setDescription] = useState('');
 	const [dueDate, setDueDate] = useState('');
@@ -25,6 +25,7 @@ export const ToDoForm = () => {
 		setDescription('');
 		setDueDate('');
 		setPriority(null);
+		onAfterSubmit();
 	};
 
 	return (
@@ -71,7 +72,7 @@ export const ToDoForm = () => {
 							defaultValue={priority}
 							onChange={setPriority}
 							options={options}
-							placeholder="Nivel de prioridade"
+							placeholder="Nivel"
 						/>
 					</div>
 				</div>
