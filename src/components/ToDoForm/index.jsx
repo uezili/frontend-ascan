@@ -20,8 +20,6 @@ export const ToDoForm = ({ onAfterSubmit }) => {
 
 	const date = new Date(dueDate).toLocaleDateString('en-GB');
 
-	console.log();
-
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		dispatch(addTodo(title, description, date, priority));
