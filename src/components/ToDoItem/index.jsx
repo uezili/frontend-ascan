@@ -28,8 +28,6 @@ export const ToDoItem = ({ todo }) => {
 		}
 	}
 
-	console.log(status);
-
 	return (
 		<div className={'todo-item'} style={{ background: background }}>
 			<div className="flex justify-between">
