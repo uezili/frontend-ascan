@@ -27,13 +27,23 @@ export const ToDoItem = ({ todo }) => {
 			return <SignalBarsHight />;
 		}
 	}
-	console.log(todo);
+
+	console.log(status);
+
 	return (
-		<div className="todo-item">
-			{todo && <h1 className="pt-0">{todo.title}</h1>}
+		<div className={'todo-item'} style={{ background: background }}>
+			<div className="flex justify-between">
+				{todo && <h1 className="pt-0 pb-2 text-xl">{todo.title}</h1>}
+				<div className="flex items-center">
+					<button className="edit-button mr-2 flex"></button>
+					<button className="delete-button flex"></button>
+				</div>
+			</div>
+
 			<div>
 				<p className="break-words">{todo.description}</p>
-				<span>{levelIcon(todo.priority.label)}</span>
+			</div>
+			<div className="flex justify-between">
 				<Select
 					className="select-date"
 					defaultValue={status}
@@ -42,10 +52,10 @@ export const ToDoItem = ({ todo }) => {
 				/>
 				<div className="date-data">
 					<Calendar />
-					<p>Due: {todo.dueDate}</p>
+					<p>{todo.dueDate}</p>
+					<span>{levelIcon(todo.priority.label)}</span>
 				</div>
 			</div>
-			<button>Delete</button>
 		</div>
 	);
 };
