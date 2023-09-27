@@ -29,7 +29,7 @@ export const ToDoItem = ({ todo }) => {
 	}
 
 	return (
-		<div className={'todo-item'} style={{ background: background }}>
+		<div className={'todo-item'}>
 			<div className="flex justify-between">
 				{todo && <h1 className="pt-0 pb-2 text-xl">{todo.title}</h1>}
 				<div className="flex items-center">
