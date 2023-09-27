@@ -1,6 +1,9 @@
 .todo-item {
-  @apply bg-gray-400 p-2 mb-2;
-  @apply rounded-lg p-3 border border-solid border-gray-400;
+  @apply bg-white rounded-xl p-3 border border-solid border-gray-400 mb-2;
+}
+
+.todo-item:hover{
+  @apply shadow-lg;
 }
 
 svg {
@@ -11,11 +14,49 @@ svg {
 }
 
 .date-data{
-  @apply flex justify-end items-center gap-4;
+  @apply flex justify-end items-center gap-3;
+}
+
+.edit-button{
+  @apply text-[#0288d1] p-2 rounded-lg;
+}
+
+.edit-button::after{
+  @apply w-6 h-6;
+  content: "";
+  background-image: url("assets/icons/pencil.svg");
+  background-size: 24px;
+}
+
+.edit-button:hover{
+  @apply bg-blue-200;
+}
+
+.edit-button:hover::after {
+  background-image: url("assets/icons/pencil-hover.svg");
+}
+
+.delete-button{
+  @apply text-[#D71313] p-2 rounded-lg;
+}
+
+.delete-button::after{
+  @apply w-6 h-6;
+  content: "";
+  background-image: url("assets/icons/trash.svg");
+  background-size: 22px;
+}
+
+.delete-button:hover{
+  @apply bg-red-200;
+}
+
+.delete-button:hover::after {
+  background-image: url("assets/icons/trash-hover.svg");
 }
 
 span{
-  @apply flex justify-end;
+  @apply flex justify-end pb-3;
 }
 
 .select-date{
