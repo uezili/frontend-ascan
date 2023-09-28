@@ -3,7 +3,7 @@ import { ToDoForm } from '../ToDoForm';
 import './styles.css';
 import { Plus } from '../../../assets/icons/plus';
 
-export const Modal = () => {
+export const ModalForm = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [rotate, setRotate] = useState('');
 
@@ -17,9 +17,9 @@ export const Modal = () => {
 			setRotate('rotate-45');
 		}
 	};
-	console.log(isOpen);
+
 	return (
-		<div className="flex justify-center ">
+		<div className="flex justify-center">
 			<button className="open-modal" onClick={openModal}>
 				<Plus rotate={rotate} />
 			</button>
