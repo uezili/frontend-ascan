@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 h1 {
   @apply text-2xl pt-3;
 }
@@ -25,11 +21,11 @@ input[type="date"]{
   @apply block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6;
 }
 
-button[type="submit"]{
+button[type="submit"].button-submit{
   @apply flex justify-center items-center w-full rounded-md bg-indigo-700 px-3.5 py-2.5 text-center text-sm text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600;
 }
 
-button[type="submit"] svg{
+button[type="submit"].button-submit svg{
   @apply ml-2 w-6 h-6;
 }
 

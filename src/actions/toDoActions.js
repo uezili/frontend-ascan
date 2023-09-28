@@ -23,3 +23,11 @@ export const deleteTodo = (id) => ({
 		id,
 	},
 });
+
+export const updateTodo = (id, updatedTodo) => ({
+	type: 'UPDATE_TODO',
+	payload: {
+		id,
+		updatedTodo,
+	},
+});

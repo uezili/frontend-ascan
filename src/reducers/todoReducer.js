@@ -24,6 +24,20 @@ const todoReducer = (state = initialState, action) => {
 				todos: state.todos.filter((todo) => todo.id !== action.payload.id),
 			};
 
+		case 'UPDATE_TODO':
+			const { id, updatedTodo } = action.payload;
+			const updatedTodos = state.todos.map((todo) => {
+				if (todo.id === id) {
+					return { ...todo, ...updatedTodo };
+				}
+				return todo;
+			});
+
+			return {
+				...state,
+				todos: updatedTodos,
+			};
+
 		default:
 			return state;
 	}
