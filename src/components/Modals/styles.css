@@ -1,6 +1,6 @@
 
 .modal{
-  @apply bg-[#ffffff] border rounded-2xl shadow-2xl absolute m-6 p-10 max-w-md;
+  @apply bg-[#ffffff] border rounded-2xl shadow-2xl absolute m-6 p-8 max-w-md;
   z-index: 1000;
 }
 
