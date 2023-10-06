@@ -1,14 +1,13 @@
 export const SignalBarsLow = () => {
 	return (
 		<svg
+			width="30"
+			height="30"
 			fill="#A4D0A4"
-			id="Layer_1"
-			data-name="Layer 1"
 			viewBox="0 0 24 24"
-			width="512"
-			height="512"
+			xmlns="http://www.w3.org/2000/svg"
 		>
-			<path d="m5,18.5v5.5H1v-5.5c0-.827.673-1.5,1.5-1.5h1c.827,0,1.5.673,1.5,1.5Z" />
+			<path d="M12 21.75c-5.376 0-9.75-4.374-9.75-9.75S6.624 2.25 12 2.25s9.75 4.374 9.75 9.75-4.374 9.75-9.75 9.75Z"></path>
 		</svg>
 	);
 };
