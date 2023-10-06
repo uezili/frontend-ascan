@@ -1,9 +1,9 @@
-import Select from 'react-select';
 import './styles.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addTodo } from '../../actions/toDoActions';
 import { Plus } from '../../../assets/icons/plus';
+import { Select } from '../Select';
 
 export const ToDoForm = ({ onAfterSubmit }) => {
 	const [title, setTitle] = useState('');
@@ -12,17 +12,9 @@ export const ToDoForm = ({ onAfterSubmit }) => {
 	const [priority, setPriority] = useState(null);
 	const dispatch = useDispatch();
 
-	const options = [
-		{ value: 'baixo', label: 'Baixo' },
-		{ value: 'medio', label: 'Médio' },
-		{ value: 'alto', label: 'Alto' },
-	];
-
-	const date = new Date(dueDate).toLocaleDateString('en-GB');
-
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		dispatch(addTodo(title, description, date, priority));
+		dispatch(addTodo(title, description, dueDate, priority));
 		setTitle('');
 		setDescription('');
 		setDueDate('');
@@ -46,6 +38,7 @@ export const ToDoForm = ({ onAfterSubmit }) => {
 							value={title}
 							onChange={(e) => setTitle(e.target.value)}
 							type="text"
+							required
 						/>
 					</label>
 				</div>
@@ -54,6 +47,7 @@ export const ToDoForm = ({ onAfterSubmit }) => {
 						Descrição:
 						<textarea
 							className="description"
+							required
 							style={{ width: '100%' }}
 							value={description}
 							onChange={(e) => setDescription(e.target.value)}
@@ -64,22 +58,20 @@ export const ToDoForm = ({ onAfterSubmit }) => {
 					<div>
 						<input
 							type="date"
+							required
 							value={dueDate}
 							onChange={(e) => setDueDate(e.target.value)}
 						/>
 					</div>
-					<div>
-						<Select
-							className="select"
-							defaultValue={priority}
-							onChange={setPriority}
-							options={options}
-							placeholder="Nivel"
-						/>
-					</div>
+					<Select
+						label="Prioridade"
+						selectedValue={priority}
+						onChange={setPriority}
+						options={['Baixo', 'Médio', 'Alto']}
+					/>
 				</div>
 				<div>
-					<button type="submit">
+					<button className="button-submit" type="submit">
 						Add nova tarefa <Plus />
 					</button>
 				</div>
