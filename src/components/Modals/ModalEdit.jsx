@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { ToDoEditItem } from '../ToDoItemEdit';
+import { ToDoEditItem } from '../ToDoItemEdit/index';
 
 import './styles.css';
 
-export const ModalEdit = ({ todo, onEditComplete }) => {
+export const ModalEdit = ({ todo }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const openModal = () => {
@@ -17,17 +17,15 @@ export const ModalEdit = ({ todo, onEditComplete }) => {
 
 	return (
 		<div className="flex justify-center">
-			<button className="bg-red-700" onClick={openModal}>
-				test
-			</button>
+			<button className="edit-button" onClick={openModal} />
 
 			{isOpen && (
 				<div className="modal">
 					<div className="modal-content">
 						<ToDoEditItem
 							todo={todo}
-							onEditComplete={onEditComplete}
 							onAfterSubmit={() => setIsOpen(false)}
+							onCloseModal={() => setIsOpen(false)}
 						/>
 					</div>
 				</div>

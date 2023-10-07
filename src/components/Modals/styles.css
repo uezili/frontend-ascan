@@ -1,13 +1,55 @@
 
 .modal{
-  @apply bg-[#ffffff] border rounded-2xl shadow-2xl absolute m-6 p-8 max-w-md;
-  z-index: 1000;
+  @apply bg-[#ffffff] border rounded-2xl shadow-2xl absolute m-6 p-8 max-w-md left-1/2 top-1/2;
+  transform: translate(-50%, -50%);
 }
 
 .open-modal{
   @apply right-[10%] fixed p-3 rounded-full bg-indigo-700 top-3/4 hover:bg-indigo-900;
 }
 
+svg {
+  @apply w-7 h-7;
+}
+
 .open-modal > svg{
   @apply duration-150;
+}
+
+.edit-button{
+  @apply p-2 rounded-lg;
+}
+
+.edit-button::after{
+  @apply w-6 h-6 block;
+  content: "";
+  background-image: url("./../../../assets/icons/pencil.svg");
+  background-size: 24px;
+}
+
+.edit-button:hover{
+  @apply bg-blue-200;
+}
+
+.edit-button:hover::after {
+  background-image: url("./../../../assets/icons/pencil-hover.svg");
+}
+
+.edit-button{
+  @apply p-2 rounded-lg;
+}
+
+.edit-button::after{
+  @apply w-6 h-6;
+  content: "";
+  background-image: url("assets/icons/pencil.svg");
+  background-size: 24px;
+}
+
+.edit-button:hover{
+  @apply bg-blue-200;
+}
+
+.edit-button:hover::after {
+  background-image: url("assets/icons/pencil-hover.svg");
 }
