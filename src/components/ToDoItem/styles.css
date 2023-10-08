@@ -9,6 +9,7 @@
 svg {
   @apply w-7 h-7;
 }
+
 .todo-item h2 {
   @apply text-lg font-semibold;
 }
@@ -56,7 +57,7 @@ svg {
 }
 
 span{
-  @apply flex justify-end pb-3;
+  @apply flex justify-end ;
 }
 
 .select-date{
@@ -70,4 +71,18 @@ span{
 .select-date input{
   grid-area: auto !important;
   min-width: 0px !important;
+}
+.container-information > .select {
+  @apply w-[20%] p-0;
+}
+
+.container-information > .select .options{
+  @apply w-[9%];
+}
+
+.title-data{
+  @apply font-semibold;
+}
+.description-data{
+  @apply font-sans mt-3 mb-5;
 }
