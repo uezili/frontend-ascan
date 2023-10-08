@@ -17,7 +17,11 @@ export const ModalEdit = ({ todo }) => {
 
 	return (
 		<div className="flex justify-center">
-			<button className="edit-button" onClick={openModal} />
+			<button
+				className="edit-button"
+				title="Edição de tarefa"
+				onClick={openModal}
+			/>
 
 			{isOpen && (
 				<div className="modal">

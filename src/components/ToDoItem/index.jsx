@@ -46,7 +46,9 @@ export const ToDoItem = ({ todo }) => {
 				<div className="date-data">
 					<Calendar />
 					<span>{todo.dueDate}</span>
-					<span>{levelIcon(todo.priority)}</span>
+					<span title={'Prioridade: ' + todo.priority}>
+						{levelIcon(todo.priority)}
+					</span>
 				</div>
 			</div>
 		</div>

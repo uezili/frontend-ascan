@@ -65,9 +65,9 @@ export const ToDoForm = ({ onAfterSubmit }) => {
 					</div>
 					<Select
 						label="Prioridade"
-						selectedValue={priority}
+						value={priority}
 						onChange={setPriority}
-						options={['Baixo', 'Médio', 'Alto']}
+						options={['Baixa', 'Média', 'Alta']}
 					/>
 				</div>
 				<div>

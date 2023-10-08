@@ -18,7 +18,7 @@ export const ModalForm = () => {
 
 	return (
 		<div className="flex justify-center">
-			<button className="open-modal" onClick={openModal}>
+			<button className="open-modal" title="Nova tarefa" onClick={openModal}>
 				<Plus />
 			</button>
 

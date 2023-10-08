@@ -23,7 +23,11 @@ export const ModalDelete = ({ todo }) => {
 
 	return (
 		<div className="flex justify-center">
-			<button className="delete-button" onClick={openModal} />
+			<button
+				className="delete-button"
+				title="Deletar tarefa"
+				onClick={openModal}
+			/>
 
 			{isOpen && (
 				<div className="modal">

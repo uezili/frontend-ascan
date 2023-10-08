@@ -75,7 +75,7 @@ export const ToDoEditItem = ({ todo, onAfterSubmit, onCloseModal }) => {
 					<Select
 						name="priority"
 						label="Prioridade"
-						options={['Baixo', 'Médio', 'Alto']}
+						options={['Baixa', 'Média', 'Alta']}
 						value={todo.priority}
 						onChange={(data) =>
 							handleInputChange({
