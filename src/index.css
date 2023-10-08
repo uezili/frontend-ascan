@@ -7,6 +7,6 @@ html {
 }
 
 body {
-  @apply m-0 p-0 font-sans bg-gray-200 font-semibold;
+  @apply m-0 p-0 font-sans bg-gray-200;
 
 }

@@ -1,10 +1,10 @@
-import Select from 'react-select';
-import './styles.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { updateTodo } from '../../actions/toDoActions';
+import { Select } from '../Select';
+import './styles.css';
 
-export const ToDoEditItem = ({ todo, onEditComplete, onAfterSubmit }) => {
+export const ToDoEditItem = ({ todo, onAfterSubmit, onCloseModal }) => {
 	const [editedTodo, setEditedTodo] = useState({
 		title: todo.title,
 		description: todo.description,
@@ -14,22 +14,20 @@ export const ToDoEditItem = ({ todo, onEditComplete, onAfterSubmit }) => {
 
 	const dispatch = useDispatch();
 
-	console.log(todo);
+	// console.log(todo);
 
 	const handleInputChange = (e) => {
-		console.log(e);
 		const { name, value } = e.target;
 		setEditedTodo({
 			...editedTodo,
 			[name]: value,
-			status: setPriority(),
 		});
 	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		console.log('todo id:', todo.id, 'editTodo:', editedTodo);
 		dispatch(updateTodo(todo.id, editedTodo));
-		onEditComplete();
 		onAfterSubmit();
 	};
 
@@ -74,31 +72,28 @@ export const ToDoEditItem = ({ todo, onEditComplete, onAfterSubmit }) => {
 							onChange={handleInputChange}
 						/>
 					</div>
-					<div>
-						<Select
-							className="select"
-							name="status"
-							value={todo.priority}
-							onChange={handleInputChange}
-							options={[
-								{ value: 'baixo', label: 'Baixo' },
-								{ value: 'medio', label: 'Médio' },
-								{ value: 'alto', label: 'Alto' },
-							]}
-							placeholder="Nivel"
-						/>
-					</div>
+					<Select
+						name="priority"
+						label="Prioridade"
+						options={['Baixo', 'Médio', 'Alto']}
+						value={todo.priority}
+						onChange={(data) =>
+							handleInputChange({
+								target: { value: data, name: 'priority' },
+							})
+						}
+					/>
 				</div>
 				<div className="grid grid-cols-2 gap-2">
 					<button type="submit" className="button-save">
-						Save
+						Salvar
 					</button>
 					<button
 						type="button"
-						onClick={onEditComplete}
 						className="button-canceled"
+						onClick={onCloseModal}
 					>
-						Cancel
+						Cancelar
 					</button>
 				</div>
 			</form>

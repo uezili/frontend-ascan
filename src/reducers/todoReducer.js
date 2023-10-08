@@ -1,5 +1,10 @@
+/* eslint-disable no-case-declarations */
+const storage = localStorage.getItem('todos')
+	? JSON.parse(localStorage.getItem('todos'))
+	: [];
+
 const initialState = {
-	todos: [],
+	todos: storage,
 };
 
 const todoReducer = (state = initialState, action) => {
