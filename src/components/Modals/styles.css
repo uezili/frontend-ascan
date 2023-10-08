@@ -4,6 +4,15 @@
   transform: translate(-50%, -50%);
 }
 
+.todo-title{
+  @apply px-1 py-4 flex items-center;
+}
+
+.todo-title::before{
+  @apply content-[''] w-6 h-6 bg-[url("./../../../assets/icons/chevronLeft.svg")];
+  background-size: 24px;
+}
+
 .open-modal{
   @apply right-[10%] fixed p-3 rounded-full bg-indigo-700 top-3/4 hover:bg-indigo-900;
 }
@@ -21,9 +30,7 @@ svg {
 }
 
 .edit-button::after{
-  @apply w-6 h-6 block;
-  content: "";
-  background-image: url("./../../../assets/icons/pencil.svg");
+  @apply w-6 h-6 block content-[""] bg-[url("./../../../assets/icons/pencil.svg")];
   background-size: 24px;
 }
 
@@ -32,7 +39,7 @@ svg {
 }
 
 .edit-button:hover::after {
-  background-image: url("./../../../assets/icons/pencil-hover.svg");
+  @apply bg-[url("./../../../assets/icons/pencil-hover.svg")]
 }
 
 .edit-button{
@@ -40,9 +47,8 @@ svg {
 }
 
 .edit-button::after{
-  @apply w-6 h-6;
+  @apply w-6 h-6 bg-[url("./../../../assets/icons/pencil.svg")];
   content: "";
-  background-image: url("assets/icons/pencil.svg");
   background-size: 24px;
 }
 
@@ -51,5 +57,40 @@ svg {
 }
 
 .edit-button:hover::after {
-  background-image: url("assets/icons/pencil-hover.svg");
+  @apply bg-[url("./../../../assets/icons/pencil-hover.svg")];
+}
+
+.delete-button{
+  @apply text-[#D71313] p-2 rounded-lg;
+}
+
+.delete-button::after{
+  @apply w-6 h-6 block content-[""] bg-[url("./../../../assets/icons/trash.svg")];
+  background-size: 22px;
+}
+
+.delete-button:hover{
+  @apply bg-red-200;
+}
+
+.delete-button:hover::after {
+  @apply bg-[url("./../../../assets/icons/trash-hover.svg")];
+}
+
+.button-canceled-primary{
+  @apply w-full flex justify-center gap-2 text-xl items-center rounded-md bg-red-500 text-white px-3.5 py-2.5 text-center shadow-sm hover:bg-red-700;
+}
+
+.button-canceled-primary::before{
+  @apply w-6 h-6 bg-[url("./../../../assets/icons/trash-white.svg")];
+  content: "";
+  background-size: 22px;
+}
+
+.button-canceled-primary::before:hover{
+  @apply bg-[url("./../../../assets/icons/trash-white-hover.svg")];
+}
+
+.button-secondary{
+  @apply w-full flex justify-center gap-2 text-xl items-center text-black rounded-md border-2 border-red-500  px-3.5 py-2.5 text-center shadow-sm hover:bg-red-200;
 }
