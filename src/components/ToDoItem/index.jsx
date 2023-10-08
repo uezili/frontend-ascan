@@ -2,21 +2,14 @@ import { Calendar } from '../../../assets/icons/calendar';
 import { SignalBarsHight } from '../../../assets/icons/signalBarsHight';
 import { SignalBarsMiddle } from '../../../assets/icons/signalBarsMiddle';
 import { SignalBarsLow } from '../../../assets/icons/signalBarsLow';
-import './styles.css';
-import Select from 'react-select';
 import { useState } from 'react';
-
-const statusItem = [
-	{ value: 'aguardando', label: 'Aguardando' },
-	{ value: 'em andamento', label: 'Em andamento' },
-	{ value: 'concluido', label: 'Concluido' },
-];
+import { ModalEdit } from '../Modals/ModalEdit';
+import { ModalDelete } from '../Modals/ModalDelete';
+import { Select } from '../Select';
+import './styles.css';
 
 export const ToDoItem = ({ todo }) => {
-	const [status, setStatus] = useState({
-		value: 'aguardando',
-		label: 'Aguardando',
-	});
+	const [status, setStatus] = useState('Aguardando');
 
 	function levelIcon(level) {
 		if (level == 'Baixo') {
@@ -29,29 +22,33 @@ export const ToDoItem = ({ todo }) => {
 	}
 
 	return (
-		<div className={'todo-item'}>
+		<div className="todo-item">
 			<div className="flex justify-between">
-				{todo && <h1 className="pt-0 pb-2 text-xl">{todo.title}</h1>}
-				<div className="flex items-center">
-					<button className="edit-button mr-2 flex"></button>
-					<button className="delete-button flex"></button>
+				{todo && <h1 className="title-data pt-0 pb-2 text-xl">{todo.title}</h1>}
+				<div className="flex items-center justify-end">
+					<div className="flex justify-between">
+						<ModalEdit todo={todo} className="mr-2 flex" />
+						<ModalDelete todo={todo} />
+					</div>
 				</div>
 			</div>
-
-			<div>
+			<div className="description-content">
 				<p className="break-words">{todo.description}</p>
 			</div>
-			<div className="flex justify-between">
+
+			<div className="container-information flex justify-between">
 				<Select
-					className="select-date"
-					defaultValue={status}
+					label="Prioridade"
+					value={status}
 					onChange={setStatus}
-					options={statusItem}
+					options={['Aguardando', 'Em andamento', 'Concluido']}
 				/>
 				<div className="date-data">
 					<Calendar />
-					<p>{todo.dueDate}</p>
-					<span>{levelIcon(todo.priority.label)}</span>
+					<span>{todo.dueDate}</span>
+					<span title={'Prioridade: ' + todo.priority}>
+						{levelIcon(todo.priority)}
+					</span>
 				</div>
 			</div>
 		</div>

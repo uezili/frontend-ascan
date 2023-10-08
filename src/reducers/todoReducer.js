@@ -1,5 +1,10 @@
+/* eslint-disable no-case-declarations */
+const storage = localStorage.getItem('todos')
+	? JSON.parse(localStorage.getItem('todos'))
+	: [];
+
 const initialState = {
-	todos: [],
+	todos: storage,
 };
 
 const todoReducer = (state = initialState, action) => {
@@ -22,6 +27,20 @@ const todoReducer = (state = initialState, action) => {
 			return {
 				...state,
 				todos: state.todos.filter((todo) => todo.id !== action.payload.id),
+			};
+
+		case 'UPDATE_TODO':
+			const { id, updatedTodo } = action.payload;
+			const updatedTodos = state.todos.map((todo) => {
+				if (todo.id === id) {
+					return { ...todo, ...updatedTodo };
+				}
+				return todo;
+			});
+
+			return {
+				...state,
+				todos: updatedTodos,
 			};
 
 		default:
