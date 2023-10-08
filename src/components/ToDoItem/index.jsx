@@ -2,27 +2,37 @@ import { Calendar } from '../../../assets/icons/calendar';
 import { SignalBarsHight } from '../../../assets/icons/signalBarsHight';
 import { SignalBarsMiddle } from '../../../assets/icons/signalBarsMiddle';
 import { SignalBarsLow } from '../../../assets/icons/signalBarsLow';
-import { useState } from 'react';
 import { ModalEdit } from '../Modals/ModalEdit';
 import { ModalDelete } from '../Modals/ModalDelete';
 import { Select } from '../Select';
 import './styles.css';
+import { useDispatch } from 'react-redux';
+import { completeTodo, updateTodo } from '../../actions/toDoActions';
 
 export const ToDoItem = ({ todo }) => {
-	const [status, setStatus] = useState('Aguardando');
+	const dispatch = useDispatch();
+
+	const handleStatusChange = (currentStatus) => {
+		const newStatus = currentStatus;
+		dispatch(updateTodo(todo.id, { status: newStatus }));
+
+		if (newStatus === 'Concluido') {
+			dispatch(completeTodo(todo.id));
+		}
+	};
 
 	function levelIcon(level) {
-		if (level == 'Baixo') {
+		if (level == 'Baixa') {
 			return <SignalBarsLow />;
-		} else if (level == 'Médio') {
+		} else if (level == 'Média') {
 			return <SignalBarsMiddle />;
-		} else if (level == 'Alto') {
+		} else if (level == 'Alta') {
 			return <SignalBarsHight />;
 		}
 	}
 
 	return (
-		<div className="todo-item">
+		<div className={(!todo.completed ? '' : 'completed', 'todo-item')}>
 			<div className="flex justify-between">
 				{todo && <h1 className="title-data pt-0 pb-2 text-xl">{todo.title}</h1>}
 				<div className="flex items-center justify-end">
@@ -39,8 +49,8 @@ export const ToDoItem = ({ todo }) => {
 			<div className="container-information flex justify-between">
 				<Select
 					label="Prioridade"
-					value={status}
-					onChange={setStatus}
+					value={todo.status}
+					onChange={handleStatusChange}
 					options={['Aguardando', 'Em andamento', 'Concluido']}
 				/>
 				<div className="date-data">
