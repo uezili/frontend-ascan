@@ -92,5 +92,5 @@ svg {
 }
 
 .button-secondary{
-  @apply w-full flex justify-center gap-2 text-xl items-center text-black rounded-md border-2 border-red-500  px-3.5 py-2.5 text-center shadow-sm hover:bg-red-200;
+  @apply w-full flex justify-center gap-2 text-xl items-center text-black rounded-md border-2 border-blue-500  px-3.5 py-2.5 text-center shadow-sm hover:bg-blue-200;
 }

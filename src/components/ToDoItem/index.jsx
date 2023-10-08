@@ -15,10 +15,7 @@ export const ToDoItem = ({ todo }) => {
 	const handleStatusChange = (currentStatus) => {
 		const newStatus = currentStatus;
 		dispatch(updateTodo(todo.id, { status: newStatus }));
-
-		if (newStatus === 'Concluido') {
-			dispatch(completeTodo(todo.id));
-		}
+		dispatch(completeTodo(todo.id));
 	};
 
 	function levelIcon(level) {
@@ -48,7 +45,7 @@ export const ToDoItem = ({ todo }) => {
 
 			<div className="container-information flex justify-between">
 				<Select
-					label="Prioridade"
+					label="Status"
 					value={todo.status}
 					onChange={handleStatusChange}
 					options={['Aguardando', 'Em andamento', 'Concluido']}
