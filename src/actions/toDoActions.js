@@ -1,11 +1,20 @@
-export const addTodo = (title, description, dueDate, priority) => ({
+import { v4 as uuidv4 } from 'uuid';
+
+export const addTodo = (
+	title,
+	description,
+	dueDate,
+	priority,
+	status = 'Aguardando'
+) => ({
 	type: 'ADD_TODO',
 	payload: {
-		id: Date.now(),
+		id: uuidv4(),
 		title,
 		description,
 		dueDate,
 		priority,
+		status,
 		completed: false,
 	},
 });
