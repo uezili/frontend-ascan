@@ -32,7 +32,7 @@ export const ToDoItem = ({ todo }) => {
 					</div>
 				</div>
 			</div>
-			<div className="description-data">
+			<div className="description-content">
 				<p className="break-words">{todo.description}</p>
 			</div>
 

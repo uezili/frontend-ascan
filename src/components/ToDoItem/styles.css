@@ -83,6 +83,6 @@ span{
 .title-data{
   @apply font-semibold;
 }
-.description-data{
+.description-content{
   @apply font-sans mt-3 mb-5;
 }
