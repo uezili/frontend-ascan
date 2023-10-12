@@ -1,13 +1,12 @@
 import { Calendar } from '../../../assets/icons/calendar';
-import { SignalBarsHight } from '../../../assets/icons/signalBarsHight';
-import { SignalBarsMiddle } from '../../../assets/icons/signalBarsMiddle';
-import { SignalBarsLow } from '../../../assets/icons/signalBarsLow';
 import { ModalEdit } from '../Modals/ModalEdit';
 import { ModalDelete } from '../Modals/ModalDelete';
 import { Select } from '../Select';
 import './styles.css';
 import { useDispatch } from 'react-redux';
 import { completeTodo, updateTodo } from '../../actions/toDoActions';
+import { ModalDescription } from '../Modals/ModalDescription';
+import { formatDate, levelIcon } from '../../helpers';
 
 export const ToDoItem = ({ todo }) => {
 	const dispatch = useDispatch();
@@ -18,45 +17,39 @@ export const ToDoItem = ({ todo }) => {
 		dispatch(completeTodo(todo.id));
 	};
 
-	function levelIcon(level) {
-		if (level == 'Baixa') {
-			return <SignalBarsLow />;
-		} else if (level == 'Média') {
-			return <SignalBarsMiddle />;
-		} else if (level == 'Alta') {
-			return <SignalBarsHight />;
-		}
-	}
-
 	return (
-		<div className={(!todo.completed ? '' : 'completed', 'todo-item')}>
-			<div className="flex justify-between">
-				{todo && <h1 className="title-data pt-0 pb-2 text-xl">{todo.title}</h1>}
-				<div className="flex items-center justify-end">
-					<div className="flex justify-between">
+		<div className={`todo-item ${todo.completed ? 'completed' : ''}`}>
+			<div>
+				{todo && (
+					<p className={`title-data pt-0 text-xl truncate`}>{todo.title}</p>
+				)}
+			</div>
+
+			<div className="container-information">
+				<div className="date-data">
+					<div className="flex justify-between items-center">
+						<Calendar className="mr-3" />
+						<span>{formatDate(todo.dueDate)}</span>
+					</div>
+
+					<span className="pr-1.5" title={'Prioridade: ' + todo.priority}>
+						{levelIcon(todo.priority)}
+					</span>
+				</div>
+
+				<div className="flex justify-between mb-3">
+					<ModalDescription todo={todo} />
+					<div className="flex">
 						<ModalEdit todo={todo} className="mr-2 flex" />
 						<ModalDelete todo={todo} />
 					</div>
 				</div>
-			</div>
-			<div className="description-content">
-				<p className="break-words">{todo.description}</p>
-			</div>
-
-			<div className="container-information flex justify-between">
 				<Select
 					label="Status"
 					value={todo.status}
 					onChange={handleStatusChange}
 					options={['Aguardando', 'Em andamento', 'Concluido']}
 				/>
-				<div className="date-data">
-					<Calendar />
-					<span>{todo.dueDate}</span>
-					<span title={'Prioridade: ' + todo.priority}>
-						{levelIcon(todo.priority)}
-					</span>
-				</div>
 			</div>
 		</div>
 	);
