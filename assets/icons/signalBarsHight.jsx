@@ -3,7 +3,7 @@ export const SignalBarsHight = () => {
 		<svg
 			width="30"
 			height="30"
-			fill="#D71313"
+			fill="#ef4444"
 			viewBox="0 0 24 24"
 			xmlns="http://www.w3.org/2000/svg"
 		>

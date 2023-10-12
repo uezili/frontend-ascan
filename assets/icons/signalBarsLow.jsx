@@ -1,9 +1,10 @@
 export const SignalBarsLow = () => {
 	return (
 		<svg
+			className="fill-green-500"
 			width="30"
 			height="30"
-			fill="#A4D0A4"
+			fill="#22c55e"
 			viewBox="0 0 24 24"
 			xmlns="http://www.w3.org/2000/svg"
 		>
