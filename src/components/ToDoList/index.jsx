@@ -11,15 +11,25 @@ export const ToDoList = () => {
 	const [selectedPriority, setSelectedPriority] = useState('Todas');
 	const [selectedStatus, setSelectedStatus] = useState('Todas');
 
-	const filteredTodos = todo.filter((todo) => {
-		if (selectedPriority !== 'Todas' && todo.priority !== selectedPriority) {
-			return false;
-		}
-		if (selectedStatus !== 'Todas' && todo.status !== selectedStatus) {
-			return false;
-		}
-		return true;
-	});
+	const filteredTodos = todo
+		.filter((todo) => {
+			if (selectedPriority !== 'Todas' && todo.priority !== selectedPriority) {
+				return false;
+			}
+			if (selectedStatus !== 'Todas' && todo.status !== selectedStatus) {
+				return false;
+			}
+			return true;
+		})
+		.sort((a, b) => {
+			if (a.status === 'Concluido' && b.status !== 'Concluido') return 1;
+			if (a.status !== 'Concluido' && b.status === 'Concluido') return -1;
+			if (
+				(a.status === 'Em Andamento' && b.status !== 'Em andamento') ||
+				(a.status === 'Aguardando' && b.status !== 'Aguardando')
+			)
+				return 0;
+		});
 
 	return (
 		<div className="todo-list">
