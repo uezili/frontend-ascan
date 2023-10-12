@@ -33,7 +33,7 @@ export const ModalDescription = ({ todo }) => {
 		<div>
 			<button
 				className="button-description"
-				title="Nova tarefa"
+				title="Descrição"
 				onClick={openModal}
 			>
 				Descrição
@@ -51,9 +51,12 @@ export const ModalDescription = ({ todo }) => {
 
 						<p>{todo.description}</p>
 					</div>
-					<div className="date-data">
-						<Calendar />
-						<span>{formatDate(todo.dueDate)}</span>
+					<div className="date-data absolute bottom-0 right-0 px-10 pb-6">
+						<div className="flex items-center">
+							<Calendar className="mr-3" />
+							<span>{formatDate(todo.dueDate)}</span>
+						</div>
+
 						<span title={'Prioridade: ' + todo.priority}>
 							{levelIcon(todo.priority)}
 							{todo.priority}
