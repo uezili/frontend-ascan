@@ -17,7 +17,7 @@ export const ToDoApp = () => {
 		<div>
 			<Header />
 			<ModalForm />
-			<div className="w-1/2 my-0 mx-auto">
+			<div className="w-3/4 my-0 mx-auto">
 				{todos.length > 0 && <ToDoList todos={todos} />}
 			</div>
 		</div>
