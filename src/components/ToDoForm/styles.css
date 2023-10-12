@@ -1,5 +1,5 @@
-h1 {
-  @apply py-5;
+h1.tile-page {
+  @apply pb-5;
 }
 form {
   @apply mx-auto max-w-xl;

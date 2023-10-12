@@ -1,4 +1,4 @@
-import { Calendar } from '../../../assets/icons/calendar';
+import { Calendar } from '../IconsComponents/calendar';
 import { ModalEdit } from '../Modals/ModalEdit';
 import { ModalDelete } from '../Modals/ModalDelete';
 import { Select } from '../Select';
@@ -33,6 +33,7 @@ export const ToDoItem = ({ todo }) => {
 					</div>
 
 					<span className="pr-1.5" title={'Prioridade: ' + todo.priority}>
+						{todo.priority}
 						{levelIcon(todo.priority)}
 					</span>
 				</div>

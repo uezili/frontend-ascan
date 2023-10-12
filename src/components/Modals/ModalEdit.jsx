@@ -24,7 +24,7 @@ export const ModalEdit = ({ todo }) => {
 			/>
 
 			{isOpen && (
-				<div className="modal">
+				<div className="modal-edit">
 					<div className="modal-content">
 						<ToDoEditItem
 							todo={todo}

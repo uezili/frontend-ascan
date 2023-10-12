@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { ToDoForm } from '../ToDoForm';
 import './styles.css';
-import { Plus } from '../../../assets/icons/plus';
-import { Cross } from '../../../assets/icons/cross';
+import { Cross } from '../IconsComponents/cross';
+import { Plus } from '../IconsComponents/plus';
 
 export const ModalForm = () => {
 	const [isOpen, setIsOpen] = useState(false);

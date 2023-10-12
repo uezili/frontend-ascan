@@ -14,8 +14,6 @@ export const ToDoEditItem = ({ todo, onAfterSubmit, onCloseModal }) => {
 
 	const dispatch = useDispatch();
 
-	// console.log(todo);
-
 	const handleInputChange = (e) => {
 		const { name, value } = e.target;
 		setEditedTodo({
@@ -32,24 +30,66 @@ export const ToDoEditItem = ({ todo, onAfterSubmit, onCloseModal }) => {
 	};
 
 	return (
-		<section>
+		<>
 			<div className="flex justify-center font-bold">
 				<h1 className="text-2xl">Edição de tarefa</h1>
 			</div>
 			<form
-				className="grid grid-cols-1 gap-x-8 gap-y-6"
+				className="grid grid-cols-2 gap-x-8 gap-y-6"
 				onSubmit={handleSubmit}
 			>
 				<div>
-					<label>
-						Titulo:
-						<input
-							name="title"
-							value={editedTodo.title}
-							onChange={handleInputChange}
-							type="text"
-						/>
-					</label>
+					<div>
+						<label>
+							Titulo:
+							<input
+								name="title"
+								value={editedTodo.title}
+								onChange={handleInputChange}
+								type="text"
+							/>
+						</label>
+					</div>
+					<div className="grid grid-cols-2 gap-2">
+						<div>
+							<label>
+								Data:
+								<input
+									type="date"
+									name="dueDate"
+									value={editedTodo.dueDate}
+									onChange={handleInputChange}
+								/>
+							</label>
+						</div>
+						<label>
+							Prioridade:
+							<Select
+								name="priority"
+								label="Prioridade"
+								options={['Baixa', 'Média', 'Alta']}
+								value={todo.priority}
+								onChange={(data) =>
+									handleInputChange({
+										target: { value: data, name: 'priority' },
+									})
+								}
+							/>
+						</label>
+					</div>
+					<div className="grid grid-cols-2 gap-2 mt-8">
+						<button title="Salvar" type="submit" className="button-save">
+							Salvar
+						</button>
+						<button
+							title="Cancelar"
+							type="button"
+							className="button-canceled"
+							onClick={onCloseModal}
+						>
+							Cancelar
+						</button>
+					</div>
 				</div>
 				<div>
 					<label>
@@ -63,40 +103,7 @@ export const ToDoEditItem = ({ todo, onAfterSubmit, onCloseModal }) => {
 						></textarea>
 					</label>
 				</div>
-				<div className="grid grid-cols-2 gap-2">
-					<div>
-						<input
-							type="date"
-							name="dueDate"
-							value={editedTodo.dueDate}
-							onChange={handleInputChange}
-						/>
-					</div>
-					<Select
-						name="priority"
-						label="Prioridade"
-						options={['Baixa', 'Média', 'Alta']}
-						value={todo.priority}
-						onChange={(data) =>
-							handleInputChange({
-								target: { value: data, name: 'priority' },
-							})
-						}
-					/>
-				</div>
-				<div className="grid grid-cols-2 gap-2">
-					<button type="submit" className="button-save">
-						Salvar
-					</button>
-					<button
-						type="button"
-						className="button-canceled"
-						onClick={onCloseModal}
-					>
-						Cancelar
-					</button>
-				</div>
 			</form>
-		</section>
+		</>
 	);
 };

@@ -2,7 +2,7 @@ import './styles.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addTodo } from '../../actions/toDoActions';
-import { Plus } from '../../../assets/icons/plus';
+import { Plus } from '../IconsComponents/plus';
 import { Select } from '../Select';
 
 export const ToDoForm = ({ onAfterSubmit }) => {
@@ -25,7 +25,7 @@ export const ToDoForm = ({ onAfterSubmit }) => {
 	return (
 		<>
 			<div className="flex justify-center font-bold">
-				<h1 className="text-2xl">Adicionar nova tarefa</h1>
+				<h1 className="tile-page text-2xl">Adicionar nova tarefa</h1>
 			</div>
 			<form
 				className="grid grid-cols-2 gap-x-8 gap-y-6"
@@ -45,19 +45,25 @@ export const ToDoForm = ({ onAfterSubmit }) => {
 					</div>
 					<div className="grid grid-cols-2 gap-2">
 						<div>
-							<input
-								type="date"
-								required
-								value={dueDate}
-								onChange={(e) => setDueDate(e.target.value)}
-							/>
+							<label>
+								Data:
+								<input
+									type="date"
+									required
+									value={dueDate}
+									onChange={(e) => setDueDate(e.target.value)}
+								/>
+							</label>
 						</div>
-						<Select
-							label="Prioridade"
-							value={priority}
-							onChange={setPriority}
-							options={['Baixa', 'Média', 'Alta']}
-						/>
+						<label>
+							Prioridade:
+							<Select
+								label="Prioridade"
+								value={priority}
+								onChange={setPriority}
+								options={['Baixa', 'Média', 'Alta']}
+							/>
+						</label>
 					</div>
 					<div>
 						<button className="button-submit" type="submit">
