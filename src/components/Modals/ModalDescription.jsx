@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import './styles.css';
-import { Cross } from '../../../assets/icons/cross';
-import { Calendar } from '../../../assets/icons/calendar';
-import { SignalBarsLow } from '../../../assets/icons/signalBarsLow';
-import { SignalBarsMiddle } from '../../../assets/icons/signalBarsMiddle';
-import { SignalBarsHight } from '../../../assets/icons/signalBarsHight';
+import { Cross } from '../IconsComponents/cross';
+import { Calendar } from '../IconsComponents/calendar';
+import { SignalBarsLow } from '../IconsComponents/signalBarsLow';
+import { SignalBarsMiddle } from '../IconsComponents/signalBarsMiddle';
+import { SignalBarsHight } from '../IconsComponents/signalBarsHight';
 import { formatDate } from '../../helpers';
 
 export const ModalDescription = ({ todo }) => {
@@ -49,7 +49,7 @@ export const ModalDescription = ({ todo }) => {
 					<div className="modal-content">
 						<h1>{todo.title}</h1>
 
-						<p>{todo.description}</p>
+						<p className="pt-10">{todo.description}</p>
 					</div>
 					<div className="date-data absolute bottom-0 right-0 px-10 pb-6">
 						<div className="flex items-center">

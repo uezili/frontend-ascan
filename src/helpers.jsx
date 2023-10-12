@@ -1,6 +1,6 @@
-import { SignalBarsHight } from '../assets/icons/signalBarsHight';
-import { SignalBarsLow } from '../assets/icons/signalBarsLow';
-import { SignalBarsMiddle } from '../assets/icons/signalBarsMiddle';
+import { SignalBarsHight } from './components/IconsComponents/signalBarsHight';
+import { SignalBarsLow } from './components/IconsComponents/signalBarsLow';
+import { SignalBarsMiddle } from './components/IconsComponents/signalBarsMiddle';
 
 export function levelIcon(level) {
 	if (level == 'Baixa') {
