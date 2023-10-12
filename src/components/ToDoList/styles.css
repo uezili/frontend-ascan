@@ -7,7 +7,7 @@
 }
 
 .select-filters .select{
-  @apply w-full;
+  @apply w-full bg-white;
 }
 
 .select-filters label{
