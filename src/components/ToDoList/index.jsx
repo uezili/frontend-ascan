@@ -17,12 +17,10 @@ export const ToDoList = ({ todos }) => {
 	});
 
 	return (
-		<section>
-			<div className="todo-list">
-				{sortTodos.map((todo) => (
-					<ToDoItem key={todo.id} todo={todo} />
-				))}
-			</div>
-		</section>
+		<div className="todo-list">
+			{sortTodos.map((todo) => (
+				<ToDoItem key={todo.id} todo={todo} />
+			))}
+		</div>
 	);
 };

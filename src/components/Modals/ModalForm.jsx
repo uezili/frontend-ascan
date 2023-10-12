@@ -23,7 +23,7 @@ export const ModalForm = () => {
 			</button>
 
 			{isOpen && (
-				<div className="modal">
+				<div className="modal-form">
 					<div className="flex justify-end">
 						<button onClick={openModal}>
 							<Cross />
