@@ -11,3 +11,8 @@ export function levelIcon(level) {
 		return <SignalBarsHight />;
 	}
 }
+
+export function formatDate(dateToFormat) {
+	const date = new Date(dateToFormat);
+	return `${date.getUTCDate()}/${date.getUTCMonth() + 1}/${date.getFullYear()}`;
+}
