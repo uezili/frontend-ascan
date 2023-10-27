@@ -2,10 +2,7 @@ import { useState } from 'react';
 import './styles.css';
 import { Cross } from '../IconsComponents/cross';
 import { Calendar } from '../IconsComponents/calendar';
-import { SignalBarsLow } from '../IconsComponents/signalBarsLow';
-import { SignalBarsMiddle } from '../IconsComponents/signalBarsMiddle';
-import { SignalBarsHight } from '../IconsComponents/signalBarsHight';
-import { formatDate } from '../../helpers';
+import { formatDate, levelIcon } from '../../helpers';
 
 export const ModalDescription = ({ todo }) => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -18,16 +15,6 @@ export const ModalDescription = ({ todo }) => {
 			setIsOpen(true);
 		}
 	};
-
-	function levelIcon(level) {
-		if (level == 'Baixa') {
-			return <SignalBarsLow />;
-		} else if (level == 'Média') {
-			return <SignalBarsMiddle />;
-		} else if (level == 'Alta') {
-			return <SignalBarsHight />;
-		}
-	}
 
 	return (
 		<div>
