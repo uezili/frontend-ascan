@@ -5,35 +5,53 @@ Este é um [desafio](DESAFIO.md) proposto pelo programa de estagiários do Insti
 # Comandos importantes do projeto
 > Obs: **Para poder rodar a aplicação deve se ter o [node](https://nodejs.org/en/download) instalado.**
 
-Primeiro devemos e instalar os packages necessários para poder rodar iniciar o projeto.
+Primeiro devemos instalar os packages necessários para poder rodar iniciar o projeto.
 
 ### Instalação dos packages
-Para iniciar o projeto, rode o seguinte comando:
+Para iniciar o projeto, rode o seguinte comando:
 
 ```bash
-  npm install
+  npm install
 ```
 
 ### iniciar
-Para iniciar o projeto, rode o seguinte comando:
+Para iniciar o projeto, rode o seguinte comando:
 
 ```bash
-  npm run dev
+  npm run dev
 ```
 
 ### Parar
-Para encerrar o serviço, execute o seguinte comando precionando:
+Para encerrar o serviço, execute o seguinte comando pressionando:
 
 ```bash
-  Ctrl + C
+  Ctrl + C
+```
+
+### Testes
+Para executar os testes unitários deve ser usado o seguinte comando:
+
+```bash
+  npm run test
+```
+
+### Status da cobertura de testes
+Para acessar o relatório de cobertura de testes, execute o seguinte comando:
+
+> Obs: será gerado uma pasta chamada **coverage**, deve ser aberto o arquivo **index.html** no navegador.
+
+```bash
+  npm run coverage
 ```
 
 # Tecnologias usadas
-
-![Javascript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Node](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
-![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Test Libery](https://img.shields.io/badge/testing%20library-323330?style=for-the-badge&logo=testing-library&logoColor=red)
-![Jest](https://img.shields.io/badge/Jest-323330?style=for-the-badge&logo=Jest&logoColor=white)
+<div>
+  <img height=50 width=40 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+  <img height=50 width=40 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" />
+  <img height=50 width=40 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+  <img height=50 width=40 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" />
+  <img height=50 width=40 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" />
+  <img height=50 width=40 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" />
+  <img height=50 width=40 src="https://vitest.dev/logo-shadow.svg" />
+  <img height=50 src="https://testing-library.com/img/octopus-64x64.png" />
+</div>
