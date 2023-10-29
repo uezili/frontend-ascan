@@ -1,9 +1,5 @@
 .todo-item {
-  @apply bg-white w-[94%] rounded-xl p-3 mt-3 border border-solid border-gray-800 mb-2;
-}
-
-.todo-item:hover{
-  @apply shadow-lg;
+  @apply bg-white w-[94%] rounded-xl p-3 mt-3 border border-solid border-gray-800 mb-2 hover:shadow-lg;
 }
 
 svg {
