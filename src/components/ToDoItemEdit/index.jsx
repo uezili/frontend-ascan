@@ -14,17 +14,16 @@ export const ToDoEditItem = ({ todo, onAfterSubmit, onCloseModal }) => {
 
 	const dispatch = useDispatch();
 
-	const handleInputChange = (e) => {
-		const { name, value } = e.target;
+	const handleInputChange = (event) => {
+		const { name, value } = event.target;
 		setEditedTodo({
 			...editedTodo,
 			[name]: value,
 		});
 	};
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		console.log('todo id:', todo.id, 'editTodo:', editedTodo);
+	const handleSubmit = (event) => {
+		event.preventDefault();
 		dispatch(updateTodo(todo.id, editedTodo));
 		onAfterSubmit();
 	};
