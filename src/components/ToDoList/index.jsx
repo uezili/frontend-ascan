@@ -32,7 +32,7 @@ export const ToDoList = () => {
 	return (
 		<div className="todo-list">
 			<ToDoFilter onFilterChange={handleFilterChange}/>
-			<div className="grid grid-cols-3 gap-x-3">
+			<div className="list-items grid grid-cols-3 gap-x-3">
 				{filteredTodos.map((todo) => (
 					<ToDoItem key={todo.id} todo={todo} />
 				))}
