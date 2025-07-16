@@ -39,6 +39,7 @@ export const ToDoForm = ({ onAfterSubmit }) => {
 								value={title}
 								onChange={(e) => setTitle(e.target.value)}
 								type="text"
+								id="title"
 								required
 							/>
 						</label>
@@ -59,6 +60,7 @@ export const ToDoForm = ({ onAfterSubmit }) => {
 							Prioridade:
 							<Select
 								label="Prioridade"
+								id="priority"
 								value={priority}
 								onChange={setPriority}
 								options={['Baixa', 'Média', 'Alta']}

@@ -17,3 +17,7 @@ header nav ul{
 header h1{
     @apply text-white text-2xl font-semibold;
 }
+
+header img{
+    @apply my-3 rounded-[50%] border-2 border-white;
+}
