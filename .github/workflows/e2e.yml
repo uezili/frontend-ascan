@@ -28,6 +28,12 @@ jobs:
     needs: frontend-test
     runs-on: ubuntu-latest
     steps:
+
+      - name: Start React Server
+        run: |
+          npm install --legacy-peer-deps
+          npm run dev & sleep 10
+          
       - name: Checkout code
         uses: actions/checkout@v4
 
