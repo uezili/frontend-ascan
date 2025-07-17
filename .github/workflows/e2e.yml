@@ -35,7 +35,7 @@ jobs:
           pwd
           
       - name: Start React Server
-        working-directory: ./frontend-ascan
+        working-directory: .
         
         run: |
           npm install --legacy-peer-deps
