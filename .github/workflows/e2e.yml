@@ -35,6 +35,7 @@ jobs:
           ls -R
           pwd
           cd ..
+          ls -R
           
       # - name: Start React Server
       #   working-directory: .
