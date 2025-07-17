@@ -30,6 +30,7 @@ jobs:
     steps:
 
       - name: Start React Server
+        working-directory: ./frontend-ascan
         run: |
           npm install --legacy-peer-deps
           npm run dev & sleep 10
