@@ -26,9 +26,6 @@ jobs:
         
       - name: Run front Project
         run: nohup npm run dev &
-      
-      - name: Wait for front Project
-        run: npx wait-on http://localhost:5173
         
       - name: Clone Selenium Project
         run: |
