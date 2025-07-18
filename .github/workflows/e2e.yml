@@ -23,46 +23,17 @@ jobs:
 
       - name: Run Vitest
         run: npm test
-
-  e2e-test:
-    needs: frontend-test
-    runs-on: ubuntu-latest
-    steps:
-
-      - name: Debug directory structure
-        run: |
-          cd ..
-          ls -R
-          pwd
-          cd ..
-          ls -R
-          
-      # - name: Start React Server
-      #   working-directory: .
         
-      #   run: |
-      #     npm install --legacy-peer-deps
-      #     npm run dev & sleep 10
-          
-      # - name: Checkout code
-      #   uses: actions/checkout@v4
+      - name: Clone Selenium Project
+        run: |
+          git clone https://github.com/uezili/selenium-project-test.git
 
-      # - name: Clone Selenium Project
-      #   run: |
-      #       cd .. && git clone https://github.com/uezili/selenium-project-test.git
-            
-      # - name: Debug directory structure
-      #   run: |
-      #     ls -R
-      #     pwd
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '21'
+          distribution: 'temurin'
 
-      # - name: Set up Java
-      #   uses: actions/setup-java@v3
-      #   with:
-      #     java-version: '21'
-      #     distribution: 'temurin'
-
-      # - name: Run Selenium Tests
-      #   working-directory: ./selenium-project-test
-      #   run: |
-      #     mvn clean test
+      - name: Run Selenium Tests
+        working-directory: ./selenium-project-test
+        run: mvn clean test
