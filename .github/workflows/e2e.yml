@@ -23,6 +23,9 @@ jobs:
 
       - name: Run Vitest
         run: npm test
+
+      - name: Run front Project
+        run: npm run dev
         
       - name: Clone Selenium Project
         run: |
