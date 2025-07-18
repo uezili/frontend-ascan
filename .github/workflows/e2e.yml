@@ -23,9 +23,12 @@ jobs:
 
       - name: Run Vitest
         run: npm test
-
+        
       - name: Run front Project
-        run: npm run dev
+        run: nohup npm run dev &
+      
+      - name: Wait for front Project
+        run: npx wait-on http://localhost:5173
         
       - name: Clone Selenium Project
         run: |
