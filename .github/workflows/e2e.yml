@@ -21,21 +21,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-
-      # - name: Install dependencies
-      #   run: npm install --legacy-peer-deps
-
-      # - name: Run Vitest
-      #   run: npm test
-
+          
       - name: Install frontend dependencies
         run: npm ci --legacy-peer-deps
 
       - name: Build project
         run: npm run build
-        
-      # - name: Run front Project
-      #   run: nohup npm run dev &
         
       - name: Clone Selenium Project
         run: |
@@ -56,7 +47,7 @@ jobs:
 
       - name: Run Selenium Tests
         working-directory: ./selenium-project-test
-        run: mvn clean test
+        run: mvn clean test -Dtest.baseUrl=http://localhost:3000
 
       - name: List files
         run: ls -la ./dist
@@ -67,3 +58,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          keep_files: false
+          force_orphan: true
