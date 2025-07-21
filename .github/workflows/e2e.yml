@@ -45,8 +45,8 @@ jobs:
 
       - name: Start HTTP server
         run: |
-          npm install -g http-server
-          http-server ./dist -p 8080 > /dev/null 2>&1 &
+          npm install -g serve
+          serve -s dist &
           echo "Waiting for server to start..."
           sleep 5
 
