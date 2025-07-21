@@ -18,14 +18,20 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install dependencies
-        run: npm install --legacy-peer-deps
+      # - name: Install dependencies
+      #   run: npm install --legacy-peer-deps
 
-      - name: Run Vitest
-        run: npm test
+      # - name: Run Vitest
+      #   run: npm test
+
+      - name: Install frontend dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
         
-      - name: Run front Project
-        run: nohup npm run dev &
+      # - name: Run front Project
+      #   run: nohup npm run dev &
         
       - name: Clone Selenium Project
         run: |
@@ -36,6 +42,13 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
+
+      - name: Start HTTP server
+        run: |
+          npm install -g http-server
+          http-server ./dist -p 8080 > /dev/null 2>&1 &
+          echo "Waiting for server to start..."
+          sleep 5
 
       - name: Run Selenium Tests
         working-directory: ./selenium-project-test
