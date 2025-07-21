@@ -39,15 +39,11 @@ jobs:
           distribution: 'temurin'
 
       - name: Start HTTP server
-        run: |
-          npm install -g serve
-          serve -s dist &
-          echo "Waiting for server to start..."
-          sleep 5
+        run: npm run preview
 
       - name: Run Selenium Tests
         working-directory: ./selenium-project-test
-        run: mvn clean test -Dtest.baseUrl=http://localhost:3000
+        run: mvn clean test
 
       - name: List files
         run: ls -la ./dist
