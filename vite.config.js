@@ -15,4 +15,5 @@ export default defineConfig({
 	build: {
 		assetsInclude: ['**/*.svg', '**/*.png'],
 	},
+	base: '/frontend-ascan',
 });
