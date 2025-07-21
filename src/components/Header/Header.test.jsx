@@ -7,6 +7,13 @@ describe('Header component', () => {
 	test('Renderizar o componente header', () => {
 		const { getByText } = render(<Header />);
 
-		expect(getByText('To-Do List App')).toBe;
+		expect(getByText('To-Do Fábrica')).toBe;
+	});
+	
+	test('Renderizar o componente header com a classe title', () => {
+		const { container } = render(<Header />);
+		const titleElement = container.querySelector('.title');
+
+		expect(titleElement).toBeInTheDocument();
 	});
 });
