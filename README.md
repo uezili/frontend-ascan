@@ -11,7 +11,7 @@ Primeiro devemos instalar os packages necessários para poder rodar iniciar o pr
 Para iniciar o projeto, rode o seguinte comando:
 
 ```bash
-  npm install
+  npm install --legacy-peer-deps
 ```
 
 ### iniciar

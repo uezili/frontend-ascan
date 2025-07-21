@@ -12,4 +12,7 @@ export default defineConfig({
 			reporter: ['text', 'json', 'html'],
 		},
 	},
+	build: {
+		assetsInclude: ['**/*.svg', '**/*.png'],
+	},
 });
