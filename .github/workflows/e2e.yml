@@ -39,7 +39,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Start HTTP server
-        run: npm run preview
+        run: npm run preview &
 
       - name: Run Selenium Tests
         working-directory: ./selenium-project-test
